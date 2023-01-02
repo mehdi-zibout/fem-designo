@@ -9,7 +9,7 @@ function Button({
   return (
     <button
       {...props}
-      className={`pb-4 pt-[1.125rem] px-6 rounded-lg tracking-[1px] text-[0.9375rem] font-medium leading-5 ${
+      className={`pb-4 transition duration-200 pt-[1.125rem] px-6 rounded-lg tracking-[1px] text-[0.9375rem] font-medium leading-5 ${
         isDark
           ? "text-darkGrey bg-white hover:bg-lightPeach hover:text-white"
           : "bg-peach text-white hover:bg-lightPeach"
