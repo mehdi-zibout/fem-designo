@@ -11,13 +11,13 @@ function Navbar({ isDark = false }: NavbarProps) {
   const { pathname } = useLocation();
   return (
     <header
-      className={`w-full flex justify-between items-center ${
-        pathname === "/contact"
-          ? "pt-16 tablet:pt-20"
-          : "desktop:pt-36 tablet:pt-40 pt-64"
-      } ${
+      className={`w-full flex justify-between items-center  ${
         isDark
-          ? "tablet:pb-10 border-b border-white border-opacity-10"
+          ? `tablet:pb-10 border-b border-white border-opacity-10 ${
+              pathname === "/contact"
+                ? "pt-16 tablet:pt-20 "
+                : "desktop:pt-36 tablet:pt-40 pt-64"
+            } `
           : "py-8  tablet:py-16"
       }`}
     >
