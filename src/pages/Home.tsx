@@ -2,6 +2,8 @@ import Panel from "../components/shared/Panel";
 import { ReactComponent as BgPattern } from "../assets/graphic-design/desktop/bg-pattern-intro-graphic.svg";
 import { ReactComponent as CallToActionPattern } from "../assets/shared/desktop/bg-pattern-call-to-action.svg";
 import Button from "../components/shared/Button";
+import ProjectCard from "../components/shared/ProjectCard";
+import imgAirFilter from "../assets/app-design/desktop/image-airfilter.jpg";
 
 function Home() {
   return (
@@ -22,6 +24,12 @@ function Home() {
         patternPosition="-bottom-[70%] -left-[5%]"
       />
       footer Panel
+      <ProjectCard
+        img={imgAirFilter}
+        title="Express"
+        description="A multi-carrier shipping website for ecommerce businesses"
+      />
+      <div className="py-10"></div>
     </div>
   );
 }
