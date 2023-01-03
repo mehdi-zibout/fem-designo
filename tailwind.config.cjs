@@ -3,8 +3,8 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      tablet: "650px",
-      desktop: "950px",
+      tablet: "712px",
+      desktop: "1135px",
     },
     fontFamily: { sans: ["Jost", "sans-serif"] },
     colors: {

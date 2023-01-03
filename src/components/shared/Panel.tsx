@@ -3,7 +3,7 @@ function Panel({ content, Pattern, patternPosition, className }: PanelProps) {
   return (
     <div className="relative  rounded-[15px] overflow-hidden">
       <div
-        className={`bg-peach  rounded-[15px] ${className}  w-full h-[252px]   text-white `}
+        className={`bg-peach  rounded-[15px] ${className}  w-full desktop:h-[252px]   text-white `}
       >
         {content}
       </div>

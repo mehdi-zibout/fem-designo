@@ -13,7 +13,7 @@ function Navbar({ isDark = false }: NavbarProps) {
     <header
       className={`w-full flex justify-between items-center  ${
         isDark
-          ? `tablet:pb-10 border-b border-white border-opacity-10 ${
+          ? `tablet:pb-10 desktop:border-b flex-col tablet:flex-row border-white border-opacity-10 ${
               pathname === "/contact"
                 ? "pt-16 tablet:pt-20 "
                 : "desktop:pt-36 tablet:pt-40 pt-64"
@@ -21,12 +21,18 @@ function Navbar({ isDark = false }: NavbarProps) {
           : "py-8  tablet:py-16"
       }`}
     >
-      <div className="">
-        <Link to={"/"}>
+      <div
+        className={`${
+          isDark
+            ? "border-b border-white pb-8 w-full tablet:w-fit border-opacity-10 tablet:pb-0 tablet:border-none"
+            : ""
+        }`}
+      >
+        <Link to={"/"} className="">
           {isDark ? (
             <img
               src={logolight}
-              className="w-[202px] h-[27px]"
+              className="w-[202px] h-[27px] mx-auto tablet:mx-0"
               alt="desingo logo"
             />
           ) : (
@@ -38,11 +44,11 @@ function Navbar({ isDark = false }: NavbarProps) {
           )}
         </Link>
       </div>
-      <ul className="flex items-center">
+      <ul className={`tablet:flex items-center text-center tablet:text-left`}>
         {NavbarItems.map((item) => (
           <li
             key={item.id}
-            className={`text-[0.875rem] first-of-type:ml-0 ml-10 tracking-[2px] leading-[14px] ${
+            className={`text-[0.875rem] first-of-type:ml-0 my-8 tablet:my-0 tablet:ml-10 tracking-[2px] leading-[14px] ${
               isDark ? "text-white" : "text-darkGrey"
             } uppercase hover:underline `}
           >

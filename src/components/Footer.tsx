@@ -14,23 +14,23 @@ function Footer() {
   return (
     <div className="relative">
       {pathname !== "/contact" && (
-        <div className="tablet:h-[166px] desktop:h-[292px]">
-          <div className="absolute left-0 right-0 mx-auto tablet:px-10 desktop:px-[10.31rem]  top-[16%]">
+        <div className="tablet:h-[266px] desktop:h-[215px] h-[270px]">
+          <div className="absolute left-0 right-0 mx-auto tablet:px-10 desktop:px-[10.31rem]  desktop:top-[5%] tablet:-top-[3%] top-[1%] px-6">
             <Panel
-              className=" flex desktop:justify-between desktop:px-24 items-center "
+              className="flex desktop:justify-between desktop:px-24 items-center desktop:flex-row flex-col justify-center text-center desktop:text-left desktop:py-0 py-16 px-6 "
               content={
                 <>
                   <div className="">
-                    <h1 className="text-h1 text-[2.5rem] mb-6 capitalize">
+                    <h1 className="text-h1 text-[2.5rem] desktop:mb-6 capitalize">
                       Let’s talk about <br /> your project
                     </h1>
-                    <p className="text-body">
+                    <p className="text-body pt-1 desktop:pt-0 pb-8 desktop:pb-0">
                       Ready to take it to the next level? Contact us today and
                       find out <br />
                       how our expertise can help your business grow.
                     </p>
                   </div>
-                  <Button className="uppercase z-10" isDark>
+                  <Button className="uppercase z-10 " isDark>
                     Get In Touch
                   </Button>
                 </>
@@ -43,14 +43,14 @@ function Footer() {
       )}
       <footer className="pb-20 px-6 tablet:px-10 desktop:px-[10.31rem] bg-black w-screen">
         <Navbar isDark />
-        <div className="flex justify-between items-end mt-8  ">
-          <div className="flex">
-            <ul className="text-opacity-50 text-white text-body mr-52">
+        <div className="flex tablet:justify-between tablet:items-end tablet:flex-row flex-col items-center justify-center mt-8  ">
+          <div className="tablet:flex text-center tablet:text-left">
+            <ul className="text-opacity-50 text-white text-body desktop:mr-52 tablet:mr-14 mb-10 tablet:mb-0">
               <li className="font-bold">Designo Central Office</li>
               <li className="">3886 Wellington Street</li>
               <li className="">Toronto, Ontario M9C 3J5</li>
             </ul>
-            <ul className="text-opacity-50 font-bold text-white text-body">
+            <ul className="text-opacity-50 font-bold text-white text-body mb-10 tablet:mb-0">
               <li className="">Contact Us (Central Office)</li>
               <li className="">P : +1 253-863-8967</li>
               <li className="">M : contact@designo.co</li>
