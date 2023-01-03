@@ -1,7 +1,6 @@
 import logodark from "../assets/shared/desktop/logo-dark.png";
 import logolight from "../assets/shared/desktop/logo-light.png";
-
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavbarItems = [
   { id: 1, title: "our company", link: "about" },
@@ -9,11 +8,16 @@ const NavbarItems = [
   { id: 3, title: "Contact", link: "contact" },
 ];
 function Navbar({ isDark = false }: NavbarProps) {
+  const { pathname } = useLocation();
   return (
     <header
       className={`w-full flex justify-between items-center ${
+        pathname === "/contact"
+          ? "pt-16 tablet:pt-20"
+          : "desktop:pt-36 tablet:pt-40 pt-64"
+      } ${
         isDark
-          ? "tablet:pt-20 tablet:pb-10 pt-16 border-b border-white border-opacity-10"
+          ? "tablet:pb-10 border-b border-white border-opacity-10"
           : "py-8  tablet:py-16"
       }`}
     >
