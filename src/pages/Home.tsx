@@ -4,6 +4,7 @@ import { ReactComponent as CallToActionPattern } from "../assets/shared/desktop/
 import Button from "../components/shared/Button";
 import ProjectCard from "../components/shared/ProjectCard";
 import imgAirFilter from "../assets/app-design/desktop/image-airfilter.jpg";
+import NavCard from "../components/shared/NavCard";
 
 function Home() {
   return (
@@ -28,6 +29,13 @@ function Home() {
         img={imgAirFilter}
         title="Express"
         description="A multi-carrier shipping website for ecommerce businesses"
+      />
+      <div className="py-10"></div>
+      <NavCard
+        link="/work/web"
+        title={"WEB DESIGN"}
+        size={"w-[541px] h-[308px]"}
+        imageUrl={"./assets/home/desktop/image-web-design-small.jpg"}
       />
       <div className="py-10"></div>
     </div>
