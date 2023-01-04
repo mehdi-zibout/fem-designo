@@ -34,8 +34,9 @@ function Home() {
       <NavCard
         link="/work/web"
         title={"WEB DESIGN"}
-        size={"w-[541px] h-[308px]"}
-        imageUrl={"./assets/home/desktop/image-web-design-small.jpg"}
+        className={
+          "w-[541px] h-[308px] bg-[linear-gradient(rgba(0,_0,_0,_0.5)_100%,_rgba(0,_0,_0,_0.5)100%),url(./assets/home/desktop/image-web-design-small.jpg)] hover:bg-[linear-gradient(rgba(231,_129,_107,_0.8)_100%,_rgba(231,_129,_107,_0.8)_100%),url(./assets/home/desktop/image-web-design-small.jpg)]"
+        }
       />
       <div className="py-10"></div>
     </div>
