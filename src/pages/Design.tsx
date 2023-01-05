@@ -4,6 +4,7 @@ import ProjectCard from "../components/shared/ProjectCard";
 import NavCard from "../components/shared/NavCard";
 import { getData } from "../Data/data";
 import { ReactComponent as Leaf } from "../assets/shared/desktop/bg-pattern-leaf.svg";
+import ScrollToTop from "../components/shared/ScrollToTop";
 
 function Design() {
   const { type } = useParams();
@@ -11,7 +12,7 @@ function Design() {
   if (info) {
     const { data, navigation } = info;
     return (
-      <>
+      <ScrollToTop>
         <div className="desktop:mb-40 tablet:mb-[7.5rem] mb-24">
           <Panel
             className="flex justify-center items-center flex-col text-center tablet:h-[15.75rem] h-[20rem]"
@@ -19,9 +20,9 @@ function Design() {
             Pattern={data.introPanel.Pattern}
             patternPosition={data.introPanel.patternPosition}
           />
-          <Leaf className="absolute left-1 top-[35.1%] -z-10" />
+          <Leaf className="absolute left-3 top-[34.8%] -z-10 hidden desktop:block" />
         </div>
-        <div className="desktop:mb-40 tablet:mb-[7.5rem]  mb-24 desktop:grid-cols-3 desktop:gap-8 grid">
+        <div className="desktop:mb-40 tablet:mb-[7.5rem]   mb-24 desktop:grid-cols-3 desktop:gap-8 desktop:grid">
           {data.projects.map((project) => (
             <ProjectCard
               key={project.id}
@@ -37,11 +38,11 @@ function Design() {
               key={nav.title}
               title={`${nav.title} DESIGN`}
               className={nav.className}
-              link={`/work/${nav.title}`}
+              link={`/design/${nav.title}`}
             />
           ))}
         </div>
-      </>
+      </ScrollToTop>
     );
   }
   return <div className="">404</div>;

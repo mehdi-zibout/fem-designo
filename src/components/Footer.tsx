@@ -14,8 +14,8 @@ function Footer() {
   return (
     <div className="relative ">
       {pathname !== "/contact" && (
-        <div className="tablet:h-[266px] desktop:h-[215px] h-[270px]">
-          <div className="absolute left-0 right-0  tablet:px-10 desktop:px-[10.31rem] desktop:max-w-[1440px] mx-auto desktop:top-[-10%] tablet:-top-[3%] top-[5%] px-6">
+        <div className="tablet:h-[266px] desktop:h-[250px] h-[270px]">
+          <div className="absolute left-0 right-0  tablet:px-10 desktop:px-[10.31rem] desktop:max-w-[1440px] mx-auto desktop:top-[-1%] tablet:-top-[0%] top-[5%] px-6">
             <Panel
               className="tablet:h-[21.875rem] h-[23.68rem] rounded-[15px] flex desktop:justify-between desktop:px-24 items-center desktop:flex-row flex-col justify-center text-center desktop:text-left desktop:py-0 py-16 px-6 "
               content={
