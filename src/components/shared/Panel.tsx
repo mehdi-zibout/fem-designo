@@ -1,7 +1,7 @@
 import type { FunctionComponent, ReactNode, SVGProps } from "react";
 function Panel({ content, Pattern, patternPosition, className }: PanelProps) {
   return (
-    <div className="relative  tablet:rounded-[15px] overflow-hidden">
+    <div className="relative  tablet:rounded-[15px] overflow-hidden group">
       <div className={`bg-peach ${className} w-full text-white`}>{content}</div>
       <Pattern className={`absolute  ${patternPosition}`} />
     </div>

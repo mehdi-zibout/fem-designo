@@ -82,7 +82,7 @@ function Navbar({ isDark = false }: NavbarProps) {
       </header>
       {showBurger && (
         <ul
-          className={`tablet:hidden bg-black text-white  transition text-h3 text-[1.5rem] p-4 ${
+          className={`tablet:hidden bg-black  text-white  transition text-h3 text-[1.5rem] p-4 ${
             isDark ? "hidden" : ``
           }  `}
         >

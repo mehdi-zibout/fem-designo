@@ -1,44 +1,39 @@
 import Panel from "../components/shared/Panel";
-import { ReactComponent as BgPattern } from "../assets/graphic-design/desktop/bg-pattern-intro-graphic.svg";
-import { ReactComponent as CallToActionPattern } from "../assets/shared/desktop/bg-pattern-call-to-action.svg";
 import Button from "../components/shared/Button";
-import ProjectCard from "../components/shared/ProjectCard";
-import imgAirFilter from "../assets/app-design/desktop/image-airfilter.jpg";
-import NavCard from "../components/shared/NavCard";
-
+import { ReactComponent as bgCercle } from "../assets/home/desktop/bg-pattern-hero-home.svg";
+import imgPhone from "../assets/home/desktop/image-hero-phone.png";
 function Home() {
   return (
-    <div className="">
-      Home
+    <div className="mb-40">
       <Panel
-        className="flex justify-center items-center flex-col text-center"
+        className={
+          "desktop:py-[9rem] desktop:px-[5.94rem] flex justify-between items-start"
+        }
         content={
           <>
-            <h1 className="text-h1 mb-6 capitalize">Graphic Design</h1>
-            <p className="text-body">
-              We deliver eye-catching branding materials that are <br />
-              tailored to meet your business objectives.
-            </p>
+            <div className="w-[60%]">
+              <h1 className="text-h1 text-white z-10">
+                Award-winning custom designs and digital branding solutions
+              </h1>
+              <p className="text-body text-white py-10 w-[75%]">
+                With over 10 years in the industry, we are experienced in
+                creating fully responsive websites, app design, and engaging
+                brand experiences. Find out more about our services.
+              </p>
+              <Button isDark>LEARN MORE</Button>
+            </div>
+            <img
+              src={imgPhone}
+              alt="A phone"
+              className="absolute top-0 -right-16"
+            />
           </>
         }
-        Pattern={BgPattern}
-        patternPosition="-bottom-[70%] -left-[5%]"
-      />
-      footer Panel
-      <ProjectCard
-        img={imgAirFilter}
-        title="Express"
-        description="A multi-carrier shipping website for ecommerce businesses"
-      />
-      <div className="py-10"></div>
-      <NavCard
-        link="/design/web"
-        title={"WEB DESIGN"}
-        className={
-          "w-[541px] h-[308px] bg-[linear-gradient(rgba(0,_0,_0,_0.5)_100%,_rgba(0,_0,_0,_0.5)100%),url(./assets/home/desktop/image-web-design-small.jpg)] hover:bg-[linear-gradient(rgba(231,_129,_107,_0.8)_100%,_rgba(231,_129,_107,_0.8)_100%),url(./assets/home/desktop/image-web-design-small.jpg)]"
+        Pattern={bgCercle}
+        patternPosition={
+          "top-0 right-0 hover:translate-x-16 group-hover:translate-y-10 transition duration-[30s]"
         }
       />
-      <div className="py-10"></div>
     </div>
   );
 }

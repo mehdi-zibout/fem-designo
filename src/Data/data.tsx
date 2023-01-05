@@ -32,7 +32,8 @@ const DATA = [
         </>
       ),
       Pattern: GraphicPattern,
-      patternPosition: "-bottom-[70%] -left-[5%]",
+      patternPosition:
+        "-bottom-[70%] -left-[5%] group-hover:translate-x-36 group-hover:translate-y-20 transition duration-[30s]",
     },
     projects: [
       {
@@ -70,7 +71,8 @@ const DATA = [
         </>
       ),
       Pattern: WebPattern,
-      patternPosition: "-bottom-[70%] -left-[0%]",
+      patternPosition:
+        "-bottom-[70%] -left-[0%] group-hover:translate-x-36 group-hover:translate-y-20 transition duration-[30s]",
     },
     projects: [
       {
@@ -130,7 +132,8 @@ const DATA = [
         </>
       ),
       Pattern: AppPattern,
-      patternPosition: "-bottom-[80%] -left-[10%]",
+      patternPosition:
+        "-bottom-[80%] -left-[10%] group-hover:translate-x-36 group-hover:translate-y-20 transition duration-[30s]",
     },
     projects: [
       {
