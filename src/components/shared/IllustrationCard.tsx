@@ -8,6 +8,7 @@ import {
 import { ReactComponent as Passionate } from "../../assets/home/desktop/illustration-passionate.svg";
 
 function IllustrationCard({
+  isLocation = false,
   title,
   children,
   cerclePosition,
@@ -18,8 +19,9 @@ function IllustrationCard({
   return (
     <div
       className={
-        "flex justify-center items-center  flex-col  tablet:flex-row desktop:flex-col " +
-        className
+        `flex justify-center items-center  flex-col ${
+          isLocation ? "" : "tablet:flex-row"
+        }   desktop:flex-col ` + className
       }
       {...props}
     >
@@ -31,8 +33,16 @@ function IllustrationCard({
         ></div>
         <Illustration className="absolute top-0 left-0 right-0 bottom-0 m-auto" />
       </div>
-      <div className="desktop:mt-12 tablet:ml-12 tablet:mt-0 mt-12 desktop:ml-0">
-        <h4 className="text-h3 text-center tablet:text-left desktop:text-center desktop:mb-8 tablet:mb-4 mb-8 uppercase">
+      <div
+        className={`desktop:mt-12 ${
+          isLocation ? "" : "tablet:ml-12 tablet:mt-0"
+        }  mt-12 desktop:ml-0`}
+      >
+        <h4
+          className={`text-h3 text-center  ${
+            isLocation ? "" : "tablet:text-left tablet:mb-4"
+          }    desktop:text-center desktop:mb-8  mb-8 uppercase`}
+        >
           {title}
         </h4>
         {children}
@@ -44,6 +54,7 @@ function IllustrationCard({
 export default IllustrationCard;
 
 type IllustrationCardProps = {
+  isLocation?: boolean;
   title: string;
   children: ReactNode;
   Illustration: FunctionComponent<SVGProps<SVGSVGElement>>;

@@ -7,6 +7,14 @@ import imgHeroMobile from "../assets/about/mobile/image-about-hero.jpg";
 import imgWCTMobile from "../assets/about/mobile/image-world-class-talent.jpg";
 import imgWCTDesktop from "../assets/about/Desktop/image-world-class-talent.jpg";
 import imgWCTTablet from "../assets/about/Tablet/image-world-class-talent.jpg";
+import imgTRDMobile from "../assets/about/mobile/image-real-deal.jpg";
+import imgTRDDesktop from "../assets/about/Desktop/image-real-deal.jpg";
+import imgTRDTablet from "../assets/about/Tablet/image-real-deal.jpg";
+import IllustrationCard from "../components/shared/IllustrationCard";
+import { ReactComponent as Australia } from "../assets/shared/desktop/illustration-australia.svg";
+import { ReactComponent as Canada } from "../assets/shared/desktop/illustration-Canada.svg";
+import { ReactComponent as UnitedKingdom } from "../assets/shared/desktop/illustration-United-Kingdom.svg";
+import Button from "../components/shared/Button";
 
 function About() {
   return (
@@ -84,6 +92,80 @@ function About() {
                     : window.innerWidth < 1260
                     ? imgWCTTablet
                     : imgWCTDesktop
+                }
+                alt="Our team working"
+                className="w-full h-[44%] desktop:h-full  desktop:w-[44%] block z-10 "
+              />
+              {/* </div> */}
+            </div>
+          }
+          Pattern={bgCercleMobile}
+          patternPosition={
+            "absolute bottom-[-49%] left-[-78%] tablet:bottom-[-90%] tablet:left-[-36%]  opacity-20 desktop:bottom-[-99%] desktop:left-[10%]"
+          }
+        />
+      </div>
+      <div className="flex justify-between items-center flex-col desktop:flex-row mb-40">
+        <IllustrationCard
+          isLocation
+          title={"canada"}
+          Illustration={Canada}
+          cerclePosition={"top"}
+          className="desktop:mb-0 mb-20 desktop:mr-8  "
+        >
+          <Button>SEE LOCATION</Button>
+        </IllustrationCard>
+
+        <IllustrationCard
+          isLocation
+          title={"australia"}
+          Illustration={Australia}
+          cerclePosition={"left"}
+          className="desktop:mb-0 mb-20 desktop:mr-8  "
+        >
+          <Button>SEE LOCATION</Button>
+        </IllustrationCard>
+        <IllustrationCard
+          isLocation
+          title={"united kingdom"}
+          Illustration={UnitedKingdom}
+          cerclePosition={"bottom"}
+          className={""}
+        >
+          <Button className="mx-auto block">SEE LOCATION</Button>
+        </IllustrationCard>
+      </div>
+      <div className="desktop:mb-40 mb-32">
+        <Panel
+          className={"bg-[#FDF3F0]"}
+          content={
+            <div className="flex  flex-col-reverse desktop:flex-row-reverse desktop:items-center desktop:justify-start ">
+              <div className="h-[56%] desktop:h-full w-full desktop:w-[56%]">
+                <div className="py-20 px-6 tablet:px-16 desktop:px-[5.93rem] ">
+                  <h2 className="text-[2rem] font-medium leading-9 text-center pb-6 tablet:text-h1 desktop:text-left text-peach">
+                    The real deal{" "}
+                  </h2>
+                  <p className="text-body tablet:text-center desktop:text-left text-darkGrey">
+                    As strategic partners in our clients’ businesses, we are
+                    ready to take on any challenge as our own. Solving real
+                    problems require empathy and collaboration, and we strive to
+                    bring a fresh perspective to every opportunity. We make
+                    design and technology more accessible and give you tools to
+                    measure success. We are visual storytellers in appealing and
+                    captivating ways. By combining business and marketing
+                    strategies, we inspire audiences to take action and drive
+                    real results.
+                  </p>
+                </div>
+              </div>
+              {/* <div className="z-10"> */}
+              <img
+                src={
+                  window.innerWidth < 712
+                    ? imgTRDMobile
+                    : window.innerWidth < 1260
+                    ? imgTRDTablet
+                    : imgTRDDesktop
                 }
                 alt="Our team working"
                 className="w-full h-[44%] desktop:h-full  desktop:w-[44%] block z-10 "

@@ -88,7 +88,10 @@ function Navbar({ isDark = false }: NavbarProps) {
         >
           {NavbarItems.map((item) => (
             <li key={item.id} className={`my-8 uppercase hover:underline `}>
-              <Link to={`/${item.link}`}> {item.title}</Link>
+              <Link to={`/${item.link}`} onClick={() => setShowBurger(false)}>
+                {" "}
+                {item.title}
+              </Link>
             </li>
           ))}
         </ul>
