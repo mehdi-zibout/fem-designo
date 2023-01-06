@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     screens: {
       tablet: "712px",
-      desktop: "1135px",
+      desktop: "1260px",
     },
     fontFamily: { sans: ["Jost", "sans-serif"] },
     colors: {
