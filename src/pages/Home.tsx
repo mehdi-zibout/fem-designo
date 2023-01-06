@@ -3,10 +3,14 @@ import Button from "../components/shared/Button";
 import { ReactComponent as bgCercle } from "../assets/home/desktop/bg-pattern-hero-home.svg";
 import imgPhone from "../assets/home/desktop/image-hero-phone.png";
 import NavCard from "../components/shared/NavCard";
+import IllustrationCard from "../components/shared/IllustrationCard";
+import { ReactComponent as Passionate } from "../assets/home/desktop/illustration-passionate.svg";
+import { ReactComponent as Resourceful } from "../assets/home/desktop/illustration-resourceful.svg";
+import { ReactComponent as Friendly } from "../assets/home/desktop/illustration-friendly.svg";
 function Home() {
   return (
     <>
-      <div className="mb-40">
+      <div className="desktop:mb-40 mb-32">
         <Panel
           className={
             "desktop:py-[9rem] px-6 py-20 tablet:p-[3.75rem]  h-[53rem] desktop:h-fit desktop:px-[5.94rem] desktop:flex desktop:justify-between desktop:items-start"
@@ -37,7 +41,7 @@ function Home() {
           }
         />
       </div>
-      <div className="px-6 tablet:px-0">
+      <div className="px-6 tablet:px-0 desktop:mb-40 mb-20">
         <div className="mb-40 desktop:grid grid-cols-2 gap-8">
           <NavCard
             title={"web design"}
@@ -71,6 +75,50 @@ function Home() {
               link={"/design/graphic"}
             />
           </div>
+        </div>
+        <div className="flex justify-between items-center flex-col desktop:flex-row">
+          <IllustrationCard
+            title={"Passionate"}
+            Illustration={Passionate}
+            cerclePosition={"left"}
+            className="tablet:mb-8 desktop:mb-0 mb-20 desktop:mr-8"
+          >
+            <p
+              className={`text-body text-center tablet:text-left desktop:text-center `}
+            >
+              Each project starts with an in-depth brand research to ensure we
+              only create products that serve a purpose. We merge art, design,
+              and technology into exciting new solutions.
+            </p>
+          </IllustrationCard>
+
+          <IllustrationCard
+            title={"resourceful"}
+            Illustration={Resourceful}
+            cerclePosition={"bottom"}
+            className="tablet:mb-8 desktop:mb-0 mb-20 desktop:mr-8"
+          >
+            <p
+              className={`text-body text-center tablet:text-left desktop:text-center `}
+            >
+              Everything that we do has a strategic purpose. We use an agile
+              approach in all of our projects and value customer collaboration.
+              It guarantees superior results that fulfill our clients’ needs.
+            </p>
+          </IllustrationCard>
+          <IllustrationCard
+            title={"FRIENDLY"}
+            Illustration={Friendly}
+            cerclePosition={"top"}
+          >
+            <p
+              className={`text-body text-center tablet:text-left desktop:text-center `}
+            >
+              We are a group of enthusiastic folks who know how to put people
+              first. Our success depends on our customers, and we strive to give
+              them the best experience a company can provide.
+            </p>
+          </IllustrationCard>
         </div>
       </div>
     </>

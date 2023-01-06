@@ -27,7 +27,12 @@ module.exports = {
       ],
       body: ["16px", { lineHeight: "26px" }],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        cercle:
+          "linear-gradient(90deg, rgba(93, 2, 2, 0.0001) 0%, rgba(93, 2, 2, 0.497569) 100%);",
+      },
+    },
   },
   plugins: [],
 };
