@@ -2,27 +2,55 @@ import Map from "react-map-gl";
 
 import { ReactComponent as Pattern } from "../../assets/shared/desktop/bg-pattern-two-circles.svg";
 import Panel from "./Panel";
-function MapComponent() {
+
+type MapProps = {
+  countryName: string;
+  addressTitle: string;
+  contact1: string;
+  contact2: string;
+  address1: string;
+  address2: string;
+  longitude: number;
+  latitude: number;
+  Reverse?: boolean;
+  zoom?: number;
+};
+function MapComponent({
+  countryName,
+  address1,
+  address2,
+  addressTitle,
+  contact1,
+  contact2,
+  latitude,
+  longitude,
+  Reverse = false,
+  zoom = 14,
+}: MapProps) {
   return (
-    <div className="desktop:grid desktop:grid-cols-3  desktop:mb-6 flex flex-col-reverse justify-start items-center desktop:gap-8 ">
-      <div className="col-span-2 tablet:mt-8 desktop:mt-0 w-full">
+    <div
+      className={`${
+        Reverse ? "desktop:flex-row-reverse" : "desktop:flex-row"
+      } z-20  desktop:mb-6 flex flex-col-reverse justify-start items-center desktop:gap-8 tablet:mb-[7.5rem] mb-10`}
+    >
+      <div className="tablet:mt-8 desktop:mt-0 w-full desktop:w-[66%] z-20">
         <Panel
           bg="bg-[#FDF3F0]"
           content={
-            <div className="py-[5.5rem] px-24">
+            <div className="py-[5.5rem] tablet:pl-24 z-20">
               <h2 className="text-h2 text-peach mb-6 text-center tablet:text-left">
-                Canada
+                {countryName}
               </h2>
               <div className="tablet:flex text-center tablet:text-left ">
                 <ul className=" text-darkGrey text-body tablet:mr-[5rem] mb-6 tablet:mb-0">
-                  <li className="font-bold">Designo Central Office</li>
-                  <li className="">3886 Wellington Street</li>
-                  <li className="">Toronto, Ontario M9C 3J5</li>
+                  <li className="font-bold">{addressTitle}</li>
+                  <li className="">{address1}</li>
+                  <li className="">{address2}</li>
                 </ul>
                 <ul className="  text-darkGrey text-body">
                   <li className="font-bold">Contact </li>
-                  <li className="">P : +1 253-863-8967</li>
-                  <li className="">M : contact@designo.co</li>
+                  <li className="">P : {contact1}</li>
+                  <li className="">M : {contact2}</li>
                 </ul>
               </div>
             </div>
@@ -31,13 +59,13 @@ function MapComponent() {
           patternPosition={"absolute left-0 top-[10%]"}
         />
       </div>
-      <div className="overflow-hidden tablet:rounded-2xl h-[23.43rem] tablet:h-[20.38rem] w-full  desktop:w-[21.87rem]">
+      <div className="overflow-hidden tablet:rounded-2xl h-[23.43rem] tablet:h-[20.38rem] w-full  desktop:w-[21.87rem] cursor-pointer">
         <Map
           mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
           initialViewState={{
-            longitude: -122.4,
-            latitude: 37.8,
-            zoom: 14,
+            longitude,
+            latitude,
+            zoom,
           }}
           style={{
             width: "full",
