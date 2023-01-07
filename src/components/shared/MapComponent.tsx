@@ -29,6 +29,7 @@ function MapComponent({
 }: MapProps) {
   return (
     <div
+      id={countryName.toLowerCase().replace(/\s+/g, "")}
       className={`${
         Reverse ? "desktop:flex-row-reverse" : "desktop:flex-row"
       } z-20  desktop:mb-6 flex flex-col-reverse justify-start items-center desktop:gap-8 tablet:mb-[7.5rem] mb-10`}

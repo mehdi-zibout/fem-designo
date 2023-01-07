@@ -9,8 +9,11 @@ import IllustrationCard from "../components/shared/IllustrationCard";
 import { ReactComponent as Australia } from "../assets/shared/desktop/illustration-australia.svg";
 import { ReactComponent as Canada } from "../assets/shared/desktop/illustration-Canada.svg";
 import { ReactComponent as UnitedKingdom } from "../assets/shared/desktop/illustration-United-Kingdom.svg";
+import { ReactComponent as Leaf } from "../assets/shared/desktop/bg-pattern-leaf.svg";
+import { useNavigate } from "react-router";
 
 function Contact() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -115,7 +118,7 @@ function Contact() {
           }
         />
       </div>
-      <div className="flex justify-between items-center flex-col desktop:flex-row mb-40">
+      <div className="relative flex justify-between items-center flex-col desktop:flex-row mb-40">
         <IllustrationCard
           isLocation
           title={"canada"}
@@ -123,7 +126,9 @@ function Contact() {
           cerclePosition={"top"}
           className="desktop:mb-0 mb-20 desktop:mr-8  "
         >
-          <Button>SEE LOCATION</Button>
+          <Button onClick={() => navigate("/locations/#canada")}>
+            SEE LOCATION
+          </Button>
         </IllustrationCard>
 
         <IllustrationCard
@@ -133,7 +138,9 @@ function Contact() {
           cerclePosition={"left"}
           className="desktop:mb-0 mb-20 desktop:mr-8  "
         >
-          <Button>SEE LOCATION</Button>
+          <Button onClick={() => navigate("/locations/#australia")}>
+            SEE LOCATION
+          </Button>
         </IllustrationCard>
         <IllustrationCard
           isLocation
@@ -141,8 +148,10 @@ function Contact() {
           Illustration={UnitedKingdom}
           cerclePosition={"bottom"}
           className={""}
+          onClick={() => navigate("/locations/#unitedkingdom")}
         >
           <Button className="mx-auto block">SEE LOCATION</Button>
+          <Leaf className="absolute right-[-20%]   top-[35%]  -z-10 hidden desktop:block" />
         </IllustrationCard>
       </div>
     </div>

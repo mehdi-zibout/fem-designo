@@ -1,8 +1,18 @@
-import Map from "react-map-gl";
-import Panel from "../components/shared/Panel";
-import { ReactComponent as Pattern } from "../assets/shared/desktop/bg-pattern-two-circles.svg";
 import MapComponent from "../components/shared/MapComponent";
+import { useEffect } from "react";
+import { useLocation } from "react-router";
 function Locations() {
+  const { hash } = useLocation();
+  useEffect(() => {
+    // get id from URL
+    if (
+      hash === "#canada" ||
+      hash === "#australia" ||
+      hash === "#unitedkingdom"
+    )
+      document.querySelector(hash)?.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="">
       <MapComponent
@@ -15,7 +25,6 @@ function Locations() {
         longitude={-80}
         latitude={40}
       />
-      {/* 45.42063769003022, -75.70496894418227 */}
       <MapComponent
         countryName={"Australia"}
         addressTitle={"Designo AU Office"}

@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Button from "./shared/Button";
 import Panel from "./shared/Panel";
@@ -11,6 +11,7 @@ import { ReactComponent as Iconinstagram } from "../assets/shared/desktop/icon-i
 
 function Footer() {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   return (
     <div className="relative ">
       {pathname !== "/contact" && (
@@ -21,7 +22,7 @@ function Footer() {
               content={
                 <>
                   <div className="">
-                    <h1 className="text-h1 text-[2.5rem] desktop:mb-6 capitalize">
+                    <h1 className="text-h1 text-[2rem] tablet:text-[2.5rem] desktop:mb-6 capitalize">
                       Let’s talk about <br /> your project
                     </h1>
                     <p className="text-body pt-1 desktop:pt-0 pb-8 desktop:pb-0">
@@ -30,13 +31,17 @@ function Footer() {
                       how our expertise can help your business grow.
                     </p>
                   </div>
-                  <Button className="uppercase z-10 " isDark>
+                  <Button
+                    onClick={() => navigate("/contact")}
+                    className="uppercase z-10 "
+                    isDark
+                  >
                     Get In Touch
                   </Button>
                 </>
               }
               Pattern={CallToActionPattern}
-              patternPosition="-bottom-[65%] right-[0%]"
+              patternPosition="-bottom-[33%] right-[-2%]"
             />
           </div>
         </div>

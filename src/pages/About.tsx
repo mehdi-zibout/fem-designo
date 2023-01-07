@@ -14,12 +14,15 @@ import IllustrationCard from "../components/shared/IllustrationCard";
 import { ReactComponent as Australia } from "../assets/shared/desktop/illustration-australia.svg";
 import { ReactComponent as Canada } from "../assets/shared/desktop/illustration-Canada.svg";
 import { ReactComponent as UnitedKingdom } from "../assets/shared/desktop/illustration-United-Kingdom.svg";
+import { ReactComponent as Leaf } from "../assets/shared/desktop/bg-pattern-leaf.svg";
 import Button from "../components/shared/Button";
+import { useNavigate } from "react-router";
 
 function About() {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="desktop:mb-40 tablet:mb-32">
+      <div className="relative desktop:mb-40 tablet:mb-32">
         <Panel
           className={""}
           content={
@@ -59,6 +62,7 @@ function About() {
             "absolute bottom-[-48%] left-[-54%] tablet:bottom-[18%] tablet:left-[-16%] desktop:bottom-[-2%] desktop:left-[3%]"
           }
         />
+        <Leaf className="absolute left-[-18%]  top-[70%] -z-10 hidden desktop:block" />
       </div>
       <div className="desktop:mb-40 mb-32">
         <Panel
@@ -105,7 +109,7 @@ function About() {
           }
         />
       </div>
-      <div className="flex justify-between items-center flex-col desktop:flex-row mb-40">
+      <div className="relative flex justify-between items-center flex-col desktop:flex-row mb-40">
         <IllustrationCard
           isLocation
           title={"canada"}
@@ -113,7 +117,9 @@ function About() {
           cerclePosition={"top"}
           className="desktop:mb-0 mb-20 desktop:mr-8  "
         >
-          <Button>SEE LOCATION</Button>
+          <Button onClick={() => navigate("/locations/#canada")}>
+            SEE LOCATION
+          </Button>
         </IllustrationCard>
 
         <IllustrationCard
@@ -123,7 +129,9 @@ function About() {
           cerclePosition={"left"}
           className="desktop:mb-0 mb-20 desktop:mr-8  "
         >
-          <Button>SEE LOCATION</Button>
+          <Button onClick={() => navigate("/locations/#australia")}>
+            SEE LOCATION
+          </Button>
         </IllustrationCard>
         <IllustrationCard
           isLocation
@@ -132,8 +140,14 @@ function About() {
           cerclePosition={"bottom"}
           className={""}
         >
-          <Button className="mx-auto block">SEE LOCATION</Button>
+          <Button
+            onClick={() => navigate("/locations/#unitedkingdom")}
+            className="mx-auto block"
+          >
+            SEE LOCATION
+          </Button>
         </IllustrationCard>
+        <Leaf className="absolute right-[-50%]  top-[35%]  -z-10 hidden desktop:block" />
       </div>
       <div className="desktop:mb-40 mb-32">
         <Panel

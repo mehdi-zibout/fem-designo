@@ -7,10 +7,13 @@ import IllustrationCard from "../components/shared/IllustrationCard";
 import { ReactComponent as Passionate } from "../assets/home/desktop/illustration-passionate.svg";
 import { ReactComponent as Resourceful } from "../assets/home/desktop/illustration-resourceful.svg";
 import { ReactComponent as Friendly } from "../assets/home/desktop/illustration-friendly.svg";
+import { ReactComponent as Leaf } from "../assets/shared/desktop/bg-pattern-leaf.svg";
+import { useNavigate } from "react-router";
 function Home() {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="desktop:mb-40 mb-32">
+      <div className="relative desktop:mb-40 mb-32">
         <Panel
           className={
             "desktop:py-[9rem] px-6 py-20 tablet:p-[3.75rem]  h-[53rem] desktop:h-fit desktop:px-[5.94rem] desktop:flex desktop:justify-between desktop:items-start"
@@ -26,7 +29,9 @@ function Home() {
                   creating fully responsive websites, app design, and engaging
                   brand experiences. Find out more about our services.
                 </p>
-                <Button isDark>LEARN MORE</Button>
+                <Button onClick={() => navigate("/about")} isDark>
+                  LEARN MORE
+                </Button>
               </div>
               <img
                 src={imgPhone}
@@ -40,7 +45,9 @@ function Home() {
             "desktop:top-0 desktop:right-0 tablet:left-auto left-0 top-[10%] tablet:right-[-15%] tablet:top-[14%] hover:translate-x-16 group-hover:translate-y-10 transition duration-[30s]"
           }
         />
+        <Leaf className="absolute left-[-18%]  top-[70%] -z-10 hidden desktop:block" />
       </div>
+
       <div className="px-6 tablet:px-0 desktop:mb-40 mb-20">
         <div className="mb-40 desktop:grid grid-cols-2 gap-8">
           <NavCard
@@ -76,7 +83,7 @@ function Home() {
             />
           </div>
         </div>
-        <div className="flex justify-between items-center flex-col desktop:flex-row">
+        <div className="relative flex justify-between items-center flex-col desktop:flex-row">
           <IllustrationCard
             title={"Passionate"}
             Illustration={Passionate}
@@ -119,6 +126,7 @@ function Home() {
               them the best experience a company can provide.
             </p>
           </IllustrationCard>
+          <Leaf className="absolute right-[-18%]  top-[35%]  -z-10 hidden desktop:block" />
         </div>
       </div>
     </>
