@@ -1,3 +1,4 @@
+import { useForm, SubmitHandler } from "react-hook-form";
 import Panel from "../components/shared/Panel";
 import { ReactComponent as BgCercle } from "../assets/contact/desktop/bg-pattern-hero-desktop.svg";
 import { ReactComponent as BgCercleMobile } from "../assets/contact/mobile/bg-pattern-hero-contact-mobile.svg";
@@ -8,7 +9,16 @@ import IllustrationCard from "../components/shared/IllustrationCard";
 import { ReactComponent as Australia } from "../assets/shared/desktop/illustration-australia.svg";
 import { ReactComponent as Canada } from "../assets/shared/desktop/illustration-Canada.svg";
 import { ReactComponent as UnitedKingdom } from "../assets/shared/desktop/illustration-United-Kingdom.svg";
+
 function Contact() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+
   return (
     <div className="">
       <div className="desktop:mb-40 mb-32">
@@ -29,11 +39,67 @@ function Contact() {
                   </p>
                 </div>
               </div>
-              <form className="w-full desktop:w-[50%] h-[60%]  desktop:h-full desktop:px-24 desktop:py-14 px-6 tablet:px-16 pb-8 ">
-                <InputText label={"Name"} className="" />
-                <InputText label={"Email Address"} />
-                <InputText label={"Phone"} />
-                <Textarea label={"Your Message"} />
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="w-full desktop:w-[50%] h-[60%] z-20  desktop:h-full desktop:px-24 desktop:py-14 px-6 tablet:px-16 pb-8 "
+              >
+                <InputText
+                  error={{
+                    isError: Boolean(errors.name),
+                    message: errors.name?.message || "",
+                  }}
+                  rhf={register("name", {
+                    required: "Can’t be empty",
+                    maxLength: {
+                      value: 20,
+                      message: "Can't have more than 20 letter",
+                    },
+                    pattern: {
+                      value:
+                        /^([a-zA-Z0-9]+|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{1,}|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{3,}\s{1}[a-zA-Z0-9]{1,})$/,
+                      message: "Please write a valid name",
+                    },
+                  })}
+                  label={"Name"}
+                  className=""
+                />
+                <InputText
+                  error={{
+                    isError: Boolean(errors.email),
+                    message: errors.email?.message || "",
+                  }}
+                  rhf={register("email", {
+                    required: "Can’t be empty",
+                    pattern: {
+                      value: /\S+@\S+\.\S+/,
+                      message: "Please write a valid email",
+                    },
+                  })}
+                  label={"Email Address"}
+                />
+                <InputText
+                  error={{
+                    isError: Boolean(errors.phone),
+                    message: errors.phone?.message || "",
+                  }}
+                  rhf={register("phone", {
+                    required: "Can’t be empty",
+                    pattern: {
+                      value:
+                        /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
+                      message: "Please write a valid phone number",
+                    },
+                  })}
+                  label={"Phone"}
+                />
+                <Textarea
+                  error={{
+                    isError: Boolean(errors.message),
+                    message: errors.message?.message || "",
+                  }}
+                  rhf={register("message", { required: "Can’t be empty" })}
+                  label={"Your Message"}
+                />
                 <Button
                   className="mx-auto tablet:mx-0 tablet:ml-auto block w-36 h-14"
                   isDark
@@ -45,7 +111,7 @@ function Contact() {
           }
           Pattern={window.innerWidth >= 712 ? BgCercle : BgCercleMobile}
           patternPosition={
-            "absolute bottom-[-48%] left-[-15%] tablet:bottom-[16.3%] tablet:left-[-16%] desktop:bottom-[0%] desktop:left-[0%] "
+            "absolute bottom-[-28%] left-[-40%] tablet:bottom-[16.3%] tablet:left-[-16%] desktop:bottom-[0%] desktop:left-[0%] "
           }
         />
       </div>
@@ -84,3 +150,10 @@ function Contact() {
 }
 
 export default Contact;
+
+type Inputs = {
+  email: string;
+  name: string;
+  message: string;
+  phone: number;
+};
