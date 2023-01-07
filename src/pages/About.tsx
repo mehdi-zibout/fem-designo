@@ -62,7 +62,7 @@ function About() {
       </div>
       <div className="desktop:mb-40 mb-32">
         <Panel
-          className={"bg-[#FDF3F0]"}
+          bg={"bg-[#FDF3F0]"}
           content={
             <div className="flex  flex-col-reverse desktop:flex-row-reverse desktop:items-center desktop:justify-start ">
               <div className="h-[56%] desktop:h-full w-full desktop:w-[56%]">
@@ -137,7 +137,7 @@ function About() {
       </div>
       <div className="desktop:mb-40 mb-32">
         <Panel
-          className={"bg-[#FDF3F0]"}
+          bg={"bg-[#FDF3F0]"}
           content={
             <div className="flex  flex-col-reverse desktop:flex-row-reverse desktop:items-center desktop:justify-start ">
               <div className="h-[56%] desktop:h-full w-full desktop:w-[56%]">

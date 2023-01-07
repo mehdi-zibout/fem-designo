@@ -4,10 +4,13 @@ import { ReactComponent as ErrorIcon } from "../../assets/contact/desktop/icon-e
 
 function InputText({ label, error, className, ...props }: InputTextProps) {
   return (
-    <label className="relative block w-fit">
+    <label className="relative block w-full mb-6">
       <span className="hidden">{label}</span>
       <input
-        className="h-9 border-b focus:border-b-[3px] hover:border-b-[3px] border-white tracking-[1px] text-[0.9375rem] font-medium leading-6 text-white  placeholder:text-opacity-50 bg-opacity-0 bg-white px-4 pb-3 outline-none"
+        className={
+          "w-full  h-9 border-b focus:border-b-[3px] hover:border-b-[3px] border-white tracking-[1px] text-[0.9375rem] font-medium leading-6 text-white placeholder:text-white  placeholder:text-opacity-50 bg-opacity-0 bg-white px-4 pb-3 outline-none " +
+          className
+        }
         placeholder={label}
         {...props}
         type="text"
