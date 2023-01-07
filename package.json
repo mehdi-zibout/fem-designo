@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://mehdi-zibout.github.io/fem-designo/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
